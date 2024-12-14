@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reporte Operativo</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+      
+      .body {
+        display: flex;
+        min-height: 100vh;
+        background-color: #f2f2f2;
+      }
+      
+      .sidebar {
+        width: 250px;
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+      }
+      
+      .sidebar h1 {
+        color: #ff5722;
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+      
+      .menu-item {
+        display: flex;
+        align-items: center;
+        padding: 10px 0;
+        color: #333;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      
+      .menu-item:hover {
+        color: #ff5722;
+      }
+      
+      .menu-item.active {
+        color: #ff5722;
+        font-weight: bold;
+      }
+      
+      .content {
+        flex: 1;
+        padding: 20px;
+      }
+      
+      .header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: white;
+        padding: 10px 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      
+      .header h2 {
+        color: #ff5722;
+        font-size: 18px;
+      }
+
+        .header h3 {
+        color: #ff5722;
+        font-size: 18px;
+      }
+      
+      .search-bar {
+        display: flex;
+        gap: 10px;
+        padding: 20px;
+        background-color: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        align-items: center;
+      }
+      
+      .search-bar input,
+      .search-bar select,
+      .search-bar button {
+        padding: 8px;
+        font-size: 14px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+      }
+      
+      .search-bar button {
+        background-color: #ff5722;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      
+      .dashboard-summary {
+        display: flex;
+        gap: 10px;
+        padding: 20px;
+        background-color: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+      }
+      
+      .summary-item {
+        flex: 1;
+        display: flex;
+        padding: 15px;
+        background-color: #e0e0e0;
+        border-radius: 5px;
+        text-align: center;
+        transition: padding 0.3s;
+      }
+      
+      .summary-item h3 {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 5px;
+      }
+      
+      .summary-item p {
+        font-size: 18px;
+        font-weight: bold;
+        color: #ff5722;
+      }
+      
+      .detail-section {
+        padding: 20px;
+        background-color: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      
+      .detail-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #ff5722;
+        margin-bottom: 15px;
+      }
+      .detail-header > h3 {
+        color: #ff5722;
+      }
+      
+      .detail-table {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 15px;
+      }
+      
+      .detail-column {
+        flex: 1;
+        color: white;
+        text-align: center;
+        border-radius: 5px;
+        box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.5);
+        font-family: Roboto;
+        border: 1px solid rgba(255, 77, 0, 1);
+      }
+      .detail-column > p {
+        color: #ff5722;
+        padding: 10px 0;
+        width: 100%;
+      }
+      
+      .detail-column > p:first-child {
+        background-color: #ff5722;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        color: #fff;
+      }
+      
+      .general-info {
+        font-size: 14px;
+        line-height: 1.5;
+        color: #333;
+        display: none;
+      }
+      
+      .general-info h3 {
+        color: #ff5722;
+        margin-bottom: 10px;
+      }
+      
+      .buttons {
+        display: flex;
+        gap: 10px;
+        margin-top: 15px;
+      }
+      
+      .buttons button {
+        padding: 10px 15px;
+        background-color: #ff5722;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+      }
+      
+      .buttons button:hover {
+        background-color: #e64a19;
+      }
+      
+      header {
+        width: 100%;
+        padding: 10px 0;
+        background-color: white;
+        text-align: left;
+        padding-left: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      
+      header h1 {
+        color: #ff5722;
+        font-size: 20px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+      }
+      
+      .highlight {
+        display: block;
+      }
+      
+      .d-none {
+        display: none;
+      }
+      
+      .d-flex {
+        display: flex;
+      }
+
+      #summary-item-1:hover{
+        padding: 18px;
+      }
+
+      #summary-item-2:hover{
+        padding: 18px;
+      }
+
+      #summary-item-3:hover{
+        padding: 18px;
+      }
+
+      #summary-item-4:hover{
+        padding: 18px;
+      }
+
+      #summary-item-5:hover{
+        padding: 18px;
+      }
+
+      #summary-item-6:hover{
+        padding: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Reportes Operativos de la Cadena de Suministro</h1>
+      <div style="width:220px;display:flex;align-items:center;">
+        <img style="width:20px;height:20px" src="./iconos/campana.svg" />
+        <div style="background-color: rgba(251,98,96,1);color:#FFF;width:15px;height: 15px;font-size: 10px;border-radius:50%;text-align: center;line-height: 15px;margin-bottom:20px;">5</div>
+        <img style="width:22px;height:22px;margin-left:8px;" src="./iconos/perfil.png" />
+        <div style="display:flex;flex-direction:column;flex-wrap:wrap;margin-left:9px;">
+          <span style="font-size:14px;"><b>Administrador Obra</b></span>
+          <span style="font-size:14px;margin-top:5px;text-transform:capitalize;" id="username">Carlos Gonzáles</span>
+        </div>
+      </div>
+    </header>
+    <div class="body">
+      <div class="sidebar">
+        <div class="menu-item active">
+          <img src="./iconos/opcion_1.svg" />
+          <span style="margin-left:5px;">Dashboard Operativo</span>
+        </div>
+        <div class="menu-item">
+          <a style=" text-decoration: none;color: inherit;" href="reporte-estrategico-1.html">
+            <img src="./iconos/opcion_2.svg" />
+            <span style="margin-left:5px;">Dashboard Estratégico I</span>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a style=" text-decoration: none;color: inherit;" href="reporte-estrategico-2.html">
+            <img src="./iconos/opcion_3.svg" />
+            <span style="margin-left:5px;">Dashboard Estratégico II</span>
+          </a>
+        </div>
+        <div class="menu-item">
+          <img src="./iconos/opcion_4.svg" />
+          <span style="margin-left:5px;">Report entry</span>
+        </div>
+        <div class="menu-item">
+          <img src="./iconos/opcion_5.svg" />
+          <span style="margin-left:5px;">User information</span>
+        </div>
+        <div class="menu-item">
+          <img src="./iconos/opcion_6.svg" />
+          <span style="margin-left:5px;">Room information</span>
+        </div>
+        <div class="menu-item">
+          <img src="./iconos/opcion_7.svg" />
+          <span style="margin-left:5px;">Historical batch</span>
+        </div>
+        <div class="menu-item">
+          <img src="./iconos/opcion_8.svg" />
+          <span style="margin-left:5px;">Staff structure</span>
+        </div>
+      </div>
+      <div class="content">
+        <div class="header">
+          <h2>Buscar Solicitudes</h2>
+        </div>
+        <div class="search-bar">
+          <select>
+            <option>SIM</option>
+            <option>SOLPED</option>
+            <option>VC</option>
+            <option>OC</option>
+            <option>SP</option>
+          </select>
+          <input type="text" id="solicitud" placeholder="N° de Solicitud" />
+          <input type="text" id="proyecto" placeholder="Nombre del Proyecto" />
+          <input type="date" id="fecha" />
+          <input type="date" id="fecha2" />
+          <button type="button" onclick="buscar()">Buscar Solicitud</button>
+          <button type="button" onclick="limpiar()">Limpiar Campos</button>
+        </div>
+        <div class="header">
+          <h2>Dashboard Nivel Operativo: Vista Resumen</h2>
+          <h3 style="margin-top:10px;">Indicadores Clave de Desempeño en Tiempo Real</h3>
+          <h3 style="margin-top:10px;">Actualizando automáticamente según la fecha del sistema: <span id="fecha-sistema"></span><span style="color:white;background-color:#ff5722;padding:3px 5px 3px 1px;border-radius:5px;margin-left:5px;" id="hora"></span> Santiago de Chile</h3>
+        </div>
+        <div class="dashboard-summary">
+          <div  id="summary-item-1" class="summary-item" style="background-color:#58A3F7;">
+            <div style="height:80px;border-radius:5px;display:flex;align-items:center;">
+              <img src="./iconos/ds_1.svg" />
+            </div>
+            <div style="display:flex;align-items:center;flex-direction:column;justify-content:center">
+              <h3 style="color:#FFF;">SIMs Pendientes de Aprobación</h3>
+              <p style="color:#FFF;" id="valor-1">26</p>
+            </div>
+          </div>
+          <div id="summary-item-2" class="summary-item" style="background-color:#52C1F5;">
+            <div style="height:80px;border-radius:5px;display:flex;align-items:center;">
+              <img src="./iconos/ds_2.svg" />
+            </div>
+            <div style="display:flex;align-items:center;flex-direction:column;justify-content:center;">
+              <h3 style="color:#FFF;">SIMs Rechazadas</h3>
+              <p style="color:#FFF;" id="valor-2">14</p>
+            </div>
+          </div>
+          <div id="summary-item-3" class="summary-item" style="background-color:#4BCED0;">
+            <div style="height:80px;border-radius:5px;display:flex;align-items:center;">
+              <img src="./iconos/ds_3.svg" />
+            </div>
+            <div style="display:flex;align-items:center;flex-direction:column;justify-content:center">
+              <h3 style="color:#FFF;">SOLPEDs Liberadas</h3>
+              <p style="color:#FFF;" id="valor-3">127</p>
+            </div>
+          </div>
+          <div id="summary-item-4" class="summary-item" style="background-color:#FB6260;">
+            <div style="height:80px;border-radius:5px;display:flex;align-items:center;">
+              <img src="./iconos/ds_4.svg" />
+            </div>
+            <div style="display:flex;align-items:center;flex-direction:column;justify-content:center">
+              <h3 style="color:#FFF;">Vales de Consumo en Proceso</h3>
+              <p style="color:#FFF;" id="valor-4">30</p>
+            </div>
+          </div>
+          <div id="summary-item-5" class="summary-item" style="background-color:#8167F5;">
+            <div style="height:80px;border-radius:5px;display:flex;align-items:center;">
+              <img src="./iconos/ds_5.svg" />
+            </div>
+            <div style="display:flex;align-items:center;flex-direction:column;justify-content:center">
+              <h3 style="color:#FFF;">OCs en Proceso de Entrega</h3>
+              <p style="color:#FFF;" id="valor-5">96</p>
+            </div>
+          </div>
+          <div id="summary-item-6" class="summary-item" style="background-color:#81B337;">
+            <div style="height:80px;border-radius:5px;display:flex;align-items:center;">
+              <img src="./iconos/ds_6.svg" />
+            </div>
+            <div style="display:flex;align-items:center;flex-direction:column;justify-content:center">
+              <h3 style="color:#FFF;">SPs en Tránsito a Obra</h3>
+              <p style="color:#FFF;" id="valor-6">29</p>
+            </div>
+          </div>
+        </div>
+        <div class="detail-section" id="detalle-ciclo" style="display:none;">
+          <div class="detail-header">
+            <h3>Detalle del Ciclo de Vida de la Solicitud</h3>
+          </div>
+          <div class="detail-table">
+            <div class="detail-column">
+              <p>Etapa</p>
+              <p style="padding:12px 0;">SIM</p>
+              <p style="padding:12px 0;">SOLPED</p>
+              <p style="padding:12px 0;">VC</p>
+              <p style="padding:12px 0;">OC</p>
+              <p style="padding:12px 0;">SP</p>
+            </div>
+            <div class="detail-column">
+              <p>Estado</p>
+              <p style="padding:12px 0;">Aprobada</p>
+              <p style="padding:12px 0;">Sincronizada</p>
+              <p style="padding:12px 0;">Vale de Consumo Generado</p>
+              <p style="padding:12px 0;">No Aplica</p>
+              <p style="padding:12px 0;">Entregado al Solicitante</p>
+            </div>
+            <div class="detail-column">
+              <p>Fecha y Hora</p>
+              <p style="padding:12px 0;">20/10/24 - 17:20:07</p>
+              <p style="padding:12px 0;">21/10/24 - 05:55:03</p>
+              <p style="padding:12px 0;">21/10/24 - 06:10:16</p>
+              <p style="padding:12px 0;">NA</p>
+              <p style="padding:12px 0;">26/10/24 - 07:11:02</p>
+            </div>
+            <div class="detail-column" style=" display:flex;flex-direction:column;justify-content:center;align-items:center;">
+              <p>Acciones</p>
+              <p>
+                [Ver SIM]
+                <a href="#container-spinner"><button onclick="mostrarInformacion('1')" style="margin-left:55px;width:30px;background-color:#ff5722;border: none;border-radius: 2px;cursor: pointer;"><img style="height:15px;margin-top:3px;" id="img1" src="./iconos/eye.svg" /></button></a>
+              </p>
+              <p>
+                [Ver SOLPED]
+                <a href="#container-spinner"><button onclick="mostrarInformacion('2')" style="margin-left:20px;width:30px;background-color:#ff5722;border: none;border-radius: 2px;cursor: pointer;"><img style="height:15px;margin-top:3px;" id="img2" src="./iconos/eye.svg" /></button></a>
+              </p>
+              <p>
+                [Ver VC]
+                <a href="#container-spinner"><button onclick="mostrarInformacion('3')" style="margin-left:63px;width:30px;background-color:#ff5722;border: none;border-radius: 2px;cursor: pointer;"><img style="height:15px;margin-top:3px;" id="img3" src="./iconos/eye.svg" /></button></a>
+              </p>
+              <p>
+                [NA]
+                <a href="#container-spinner"><button onclick="mostrarInformacion('4')" style="margin-left:94px;width:30px;background-color:#ff5722;border: none;border-radius: 2px;cursor: pointer;"><img style="height:15px;margin-top:3px;" id="img4" src="./iconos/eye.svg" /></button></a>
+              </p>
+              <p style="padding: 10px 0 12px 0;">
+                [Ver Seguimiento]
+                <a href="#container-spinner"><button onclick="mostrarInformacion('5')" style="width:30px;background-color:#ff5722;border: none;border-radius: 2px;"><img style="height:15px;margin-top:3px;" id="img5" src="./iconos/eye.svg" /></button></a>
+              </p>
+            </div>
+          </div>
+          <div class="buttons">
+            <button type="button" onclick="actualizarEstado()">Actualizar Estado</button>
+            <button>Enviar Comentario</button>
+          </div>
+          <div id="container-spinner" class="d-none" style="width:100%;justify-content: center;">
+            <img src="./iconos/spinner.svg" />
+          </div>
+          <div class="general-info" style="margin-top:20px;" id="informacion">
+            <h3>Información General:</h3>
+            <p>
+              <b>DETALLE DE SOLICITUD:</b> <span id="txt-solicitud">SIM N°. 16259</span>
+            </p>
+            <p id="container-txt-proyecto">
+              <b>Proyecto:</b> <span id="txt-proyecto">Edificio Central Santiago </span>
+            </p>
+            <p id="container-txt-fecha">
+              <b id="label-txt-fecha">Fecha y Hora de Solicitud:</b> <span id="txt-fecha">20/10/2024 - 17:20:07</span>
+            </p>
+            <p id="container-txt-estado">
+              <b id="label-txt-estado">Estado Actual de SIM:</b> <span id="txt-estado">Aprobada</span>
+            </p>
+            <p id="container-txt-item" style="display:none;">
+              <b>N° de Item Entregado:</b> <span id="txt-item">56</span>
+            </p>
+            <p id="container-txt-actividad" style="display:none;">
+              <b>Actividad:</b> <span id="txt-actividad">Malla Puesta a Tierra</span>
+            </p>
+            <p id="container-txt-especialidad" style="display:none;">
+              <b>Especilidad:</b> <span id="txt-especialidad">Eléctrico</span>
+            </p>
+            <p id="container-txt-por">
+              <b>Solicitud por:</b> <span id="txt-por">Carlos Gonzáles</span>
+            </p>
+          </div>
+          <div style="display:flex;justify-content:space-between;margin-top:15px;">
+            <button style="border-radius: 4px;background-color: rgba(164,173,179,1);color: rgba(255,255,255,1);font-size: 14px;padding: 10px;">Exportar Datos</button>
+            <button style="border-radius: 4px;background-color: rgba(164,173,179,1);color: rgba(255,255,255,1);font-size: 14px;padding: 10px;">Generar Reporte</button>
+            <button style="border-radius: 4px;background-color: rgba(164,173,179,1);color: rgba(255,255,255,1);font-size: 14px;padding: 10px;">Configurar Vista</button>
+          </div>
+        </div>
+        <div id="spinner-detalle" style="width:100%;justify-content: center;display:none;">
+          <img src="./iconos/spinner.svg" />
+        </div>
+      </div>
+    </div>
+    <script>
+      document.getElementById('username').innerHTML = sessionStorage.getItem('username')
+      function mostrarInformacion(number) {
+        document.getElementById('container-spinner').classList.add('d-flex');
+        document.getElementById('informacion').style.display = 'none';
+        setTimeout(function () {
+          document.getElementById('container-spinner').classList.remove('d-flex')
+          document.getElementById('container-spinner').classList.add('d-none')
+          document.getElementById('informacion').style.display = 'block';
+            document.getElementById('container-txt-proyecto').style.display = 'block';
+            document.getElementById('container-txt-fecha').style.display = 'block';
+            document.getElementById('container-txt-estado').style.display = 'block';
+            document.getElementById('container-txt-por').style.display = 'block';
+            document.getElementById('container-txt-item').style.display = 'none';
+            document.getElementById('container-txt-actividad').style.display = 'none';
+            document.getElementById('container-txt-especialidad').style.display = 'none';
+          if(number === '1'){
+            document.getElementById('txt-solicitud').innerHTML = 'SIM N°. 16259';
+            document.getElementById('txt-proyecto').innerHTML = 'Edificio central Santiago';
+            document.getElementById('txt-fecha').innerHTML = '20/10/2024 - 17:20:07';
+            document.getElementById('txt-estado').innerHTML = 'Aprobada';
+            document.getElementById('label-txt-estado').innerHTML = 'Estado Actual de SIM:';
+            document.getElementById('txt-por').innerHTML = ' Carlos Gonzáles';
+          }else if(number === '2'){
+            document.getElementById('txt-solicitud').innerHTML = 'Solped N°. SAP0059';
+            document.getElementById('txt-proyecto').innerHTML = 'Edificio central Santiago';
+            document.getElementById('txt-fecha').innerHTML = '21/10/2024 - 05:55:03';
+            document.getElementById('label-txt-fecha').innerHTML = 'Fecha y Hora Generada:';
+            document.getElementById('txt-estado').innerHTML = 'Sincronizada';
+            document.getElementById('label-txt-estado').innerHTML = 'Estado Actual de SOLPED:';
+            document.getElementById('txt-por').innerHTML = 'Carlos Gonzáles';
+          }else if(number === '3'){
+            document.getElementById('txt-solicitud').innerHTML = 'VC N°.00907';
+            document.getElementById('txt-proyecto').innerHTML = 'Edificio central Santiago';
+            document.getElementById('txt-fecha').innerHTML = '21/10/2024 - 06:10:16';
+            document.getElementById('label-txt-fecha').innerHTML = 'Fecha y Hora Generada:';
+            document.getElementById('txt-estado').innerHTML = 'Generado';
+            document.getElementById('label-txt-estado').innerHTML = 'Estado Actual de vale de consumo:';
+            document.getElementById('txt-por').innerHTML = 'Carlos Gonzáles';
+          }else if(number === '4'){
+            document.getElementById('txt-solicitud').innerHTML = 'Esta solicitud no aplica (NA) porque el producto solicitado está disponible en nuestros almacenes internos y se ha emitido un Vale de Consumo(VC), lo cual elimina la necesidad de generar una Orden de Compra(OC).';
+            document.getElementById('txt-proyecto').innerHTML = '';
+            document.getElementById('container-txt-proyecto').style.display = 'none';
+            document.getElementById('txt-fecha').innerHTML = '';
+            document.getElementById('container-txt-fecha').style.display = 'none';
+            document.getElementById('txt-estado').innerHTML = '';
+            document.getElementById('container-txt-estado').style.display = 'none';
+            document.getElementById('txt-por').innerHTML = '';
+            document.getElementById('container-txt-por').style.display = 'none';
+          }else if(number === '5'){
+            document.getElementById('txt-solicitud').innerHTML = 'SP N°.0075449';
+            document.getElementById('txt-proyecto').innerHTML = 'Edificio central Santiago';
+            document.getElementById('txt-fecha').innerHTML = '26/10/2024 - 07:11:02';
+            document.getElementById('label-txt-fecha').innerHTML = 'Fecha y Hora Generada:';
+            document.getElementById('txt-estado').innerHTML = 'Entregado al Solicitante';
+            document.getElementById('label-txt-estado').innerHTML = 'Estado Actual de seguimiento del producto:';
+            document.getElementById('container-txt-item').style.display = 'block';
+            document.getElementById('container-txt-actividad').style.display = 'block';
+            document.getElementById('container-txt-especialidad').style.display = 'block';
+            document.getElementById('txt-por').innerHTML = 'Carlos Gonzáles';
+          }
+        }, 2000)
+      }
+      
+      function buscar() {
+        document.getElementById('spinner-detalle').style.display = 'flex';
+        setTimeout(function () {
+          document.getElementById('spinner-detalle').style.display = 'none';
+          document.getElementById('detalle-ciclo').style.display = 'block';
+        }, 2000);
+      }
+
+      function limpiar() {
+        document.getElementById('solicitud').value = ''
+        document.getElementById('proyecto').value = ''
+        document.getElementById('fecha').value = ''
+        document.getElementById('fecha2').value = ''
+      }
+
+      function actualizarEstado() {
+        document.getElementById('spinner-detalle').style.display = 'flex';
+        document.getElementById('detalle-ciclo').style.display = 'none';
+        document.getElementById('informacion').style.display = 'none';
+                setTimeout(function () {
+          document.getElementById('spinner-detalle').style.display = 'none';
+          document.getElementById('detalle-ciclo').style.display = 'block';
+          document.getElementById('informacion').style.display = 'block';
+        }, 2000);
+
+        document.getElementById('valor-1').innerHTML = 26 + (Math.floor(Math.random() * 3) + 1);
+        document.getElementById('valor-2').innerHTML = 14 + (Math.floor(Math.random() * 3) + 1);
+        document.getElementById('valor-3').innerHTML = 127 + (Math.floor(Math.random() * 3) + 1);
+        document.getElementById('valor-4').innerHTML = 30 + (Math.floor(Math.random() * 3) + 1);
+        document.getElementById('valor-5').innerHTML = 96 + (Math.floor(Math.random() * 3) + 1);
+        document.getElementById('valor-6').innerHTML = 29 + (Math.floor(Math.random() * 3) + 1);
+
+      }
+
+
+    function obtenerFechaActual() {
+        const diasSemana = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
+        const meses = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
+
+        const fecha = new Date();
+
+        const diaSemana = diasSemana[fecha.getDay()];
+        const dia = fecha.getDate().toString().padStart(2, '0');
+        const mes = meses[fecha.getMonth()];
+        const anio = fecha.getFullYear();
+
+        const horas = fecha.getHours().toString().padStart(2, '0');
+        const minutos = fecha.getMinutes().toString().padStart(2, '0');
+        const segundos = fecha.getSeconds().toString().padStart(2, '0'); // Añadimos los segundos
+
+        const periodo = horas >= 12 ? 'pm' : 'am';
+
+        document.getElementById('fecha-sistema').innerHTML = `${diaSemana},${dia}/${mes}/${anio}`;
+       document.getElementById('hora').innerHTML = `  ${horas}:${minutos}:${segundos} ${periodo}`;
+    }
+obtenerFechaActual()
+    // Ejecutar la función cada 1 segundo
+    setInterval(obtenerFechaActual, 1000);
+
+
+    </script>
+  </body>
+</html>

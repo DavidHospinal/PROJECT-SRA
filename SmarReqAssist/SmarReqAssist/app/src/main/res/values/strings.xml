@@ -1,0 +1,310 @@
+<resources>
+    <string name="app_name">SmartReq Assist</string>
+    <string-array name="items_actividad">
+        <item>Malla Puesta a Tierra</item>
+        <item>Canalización</item>
+        <item>Equipos</item>
+        <item>Canalización instrumentos</item>
+        <item>Escalerillas</item>
+        <item>Alumbrado</item>
+        <item>Disposición</item>
+        <item>Enchufes trifásicos 600V</item>
+        <item>Circuitos</item>
+        <item>Cableado</item>
+        <item>Suportación Tableros Fuerza/Alumbrado</item>
+        <item>Pruebas</item>
+        <item>Instrumentos</item>
+        <item>Enchufe servicio 250V</item>
+        <item>Circuitos Alumbrado</item>
+        <item>Montaje Instrumentación</item>
+        <item>Cableado UTP</item>
+        <item>Canalización Chimenea</item>
+        <item>Tableros</item>
+    </string-array>
+    <string-array name="items_especialidad">
+        <item>Eléctrico</item>
+        <item>Tica</item>
+    </string-array>
+    <string-array name="items_nivel">
+        <item>Nivel de Hundimiento</item>
+        <item>Nivel de Producción</item>
+        <item>Nivel de Servicios</item>
+        <item>Pique C</item>
+        <item>S/E Eléctrica Principal Andesita - SE TT7S</item>
+        <item>S/E Eléctrica Teniente 7 Sur</item>
+        <item>S/E TTE7 Sur</item>
+        <item>Sub Nivel de Servicios</item>
+        <item>Subnivel de Servicios</item>
+        <item>Teniente 7 Sur</item>
+        <item>Teniente 8 - Red CISCO T8</item>
+    </string-array>
+    <string-array name="items_area">
+        <item>SSEE Móvil</item>
+        <item>Puertas ventilación e incendio</item>
+        <item>Planta</item>
+        <item>TDF equipos mineros</item>
+        <item>S/E Eléctrica Principal Andesita</item>
+        <item>TDFI</item>
+        <item>Estación de Vaciado N°1</item>
+        <item>Estación de Vaciado N°2</item>
+        <item>Accesos y Cabeceras</item>
+        <item>Talleres</item>
+        <item>Barrio Cívico</item>
+        <item>General</item>
+        <item>Cabecera HW</item>
+        <item>Planta Agua Potable</item>
+        <item>Nave de mantención PA &amp; PT calderería</item>
+        <item>Nave  almacenamiento lubricantes</item>
+        <item>Nave de Lavado</item>
+        <item>Nave de mantenimiento multiproposito</item>
+        <item>Generación de Aire comprimido</item>
+        <item>Almacenamiento y cambio de neumáticos</item>
+        <item>Planta RISC</item>
+        <item>Bodega Almacenamiento de neumáticos</item>
+        <item>Bodega de Rises No Peligrosos</item>
+        <item>Taller de mantenimiento</item>
+        <item>Planta Lubricantera</item>
+        <item>Sala de Datos Andesita</item>
+        <item>Taller - Fronton N°1</item>
+        <item>Taller - Fronton N°2</item>
+        <item>Planta de RILES</item>
+        <item>Planta de tratamiento de aguas servidas</item>
+        <item>Planta filtrado de aceites</item>
+        <item>Teniente 7 Sur</item>
+        <item>Planta filtrado aceites usados</item>
+        <item>Planta Almacenamiento de Petroleo</item>
+        <item>Ventiladores secundarios</item>
+        <item>Frónton Eléctrico</item>
+        <item>SSEE Teniente 7 Sur</item>
+    </string-array>
+    <string-array name="items_plano">
+        <item>4600020291-02100-102EL-00002</item>
+        <item>4600020291-02100-102EL-00003</item>
+        <item>4600020291-02100-102EL-00001</item>
+        <item>4600020291-02100-103EL-00001</item>
+        <item>4600020291-02100-108EL-00002</item>
+        <item>4600020291-02100-108EL-00001</item>
+        <item>4600020291-02100-103EL-00002</item>
+        <item>4600020291-02100-103EL-00003</item>
+        <item>4600020291-06500-108EL-00003</item>
+        <item>4600020291-02266-100AT-00010</item>
+        <item>4600020291-06500-206EL-00001</item>
+        <item>4600020291-06500-103EL-00001</item>
+        <item>4600020291-06500-101EL-00001</item>
+        <item>4600020291-06500-100EL-00001</item>
+        <item>4600020291-06500-LSTEL-00003</item>
+        <item>4600020291-02700-202AT-00010</item>
+        <item>4600020291-02700-100AT-00001</item>
+        <item>4600020291-02200-100AT-00003</item>
+        <item>4600020291-02700-202AT-00009</item>
+        <item>4600020291-02700-202AT-00012</item>
+        <item>4600020291-02700-202AT-00011</item>
+        <item>4600020291-02700-202AT-00013</item>
+        <item>4600020291-02700-202AT-00008</item>
+        <item>4600020291-02700-202AT-00003</item>
+        <item>4600020291-02700-202AT-00004</item>
+        <item>4600020291-02266-100AT-00001</item>
+        <item>T20M401-02200-100EL-00001</item>
+        <item>4600020291-02200-102EL-00002</item>
+        <item>4600020291-02200-102EL-00010</item>
+        <item>4600020291-02200-102EL-00001</item>
+        <item>T20M401-02200-108EL-00002</item>
+        <item>T20M401-02200-108EL-00001</item>
+        <item>4600020291-07200-100EL-00002</item>
+        <item>4600020291-07200-LSTEL-00001</item>
+        <item>4600020291-07200-102EL-00005</item>
+        <item>4600020291-07200-102EL-00006</item>
+        <item>4600020291-07200-102EL-00008</item>
+        <item>4600020291-07200-102EL-00007</item>
+        <item>4600020291-07200-102EL-00009</item>
+        <item>4600020291-07200-CUBEL-00001</item>
+        <item>4600020291-07200-103EL-00010</item>
+        <item>4600020291-07200-103EL-00011</item>
+        <item>4600020291-07200-103EL-00012</item>
+        <item>4600020291-02200-103EL-00007</item>
+        <item>4600020291-02200-103EL-00008</item>
+        <item>4600020291-02200-103EL-00009</item>
+        <item>4600020291-02200-108EL-00010</item>
+        <item>4600020291-02200-108EL-00007</item>
+        <item>4600020291-02200-108EL-00011</item>
+        <item>4600020291-02200-108EL-00002</item>
+        <item>4600020291-02200-108EL-00012</item>
+        <item>4600020291-02200-102EL-00009</item>
+        <item>4600020291-02200-102EL-00006</item>
+        <item>4600020291-02200-102EL-00007</item>
+        <item>4600020291-02200-102EL-00008</item>
+        <item>4600020291-02200-103EL-00015</item>
+        <item>4600020291-02200-103EL-00017</item>
+        <item>4600020291-02200-103EL-00018</item>
+        <item>4600020291-02200-102EL-00003</item>
+        <item>4600020291-07200-108EL-00001</item>
+        <item>4600020291-02200-100AT-00007</item>
+        <item>4600020291-02200-103EL-00003</item>
+        <item>4600020291-02200-103EL-00004</item>
+        <item>4600020291-02200-100EL-00001</item>
+        <item>4600020291-06500-MDCEL-00017</item>
+        <item>4600020291-02200-100EL-00003</item>
+        <item>4600020291-07200-LSTEL-00006</item>
+        <item>4600020291-02200-108EL-00006</item>
+        <item>4600020291-06714-100CO-00006</item>
+        <item>4600020291-02700-400AT-00027</item>
+        <item>4600020291-07200-103EL-00001</item>
+        <item>4600020291-07200-103EL-00002</item>
+        <item>4600020291-07200-100EL-00001</item>
+        <item>4600020291-07200-100EL-00003</item>
+        <item>4600020291-07200-108EL-00005</item>
+        <item>4600020291-02700-400AT-00052</item>
+        <item>4600020291-06500-202EL-00001</item>
+        <item>4600020291-02700-400AT-00051</item>
+        <item>4600020291-02700-400AT-00049</item>
+        <item>4600020291-02700-400AT-00050</item>
+        <item>4600020291-02200-202EL-00007</item>
+        <item>4600020291-02200-100AT-00016</item>
+        <item>4600020291-07200-103EL-00013</item>
+        <item>4600020291-07200-205EL-00012</item>
+        <item>4600020291-07200-CUBEL-00003</item>
+        <item>4600020291-07200-103EL-00014</item>
+        <item>4600020291-07200-205EL-00013</item>
+        <item>4600020291-07200-103EL-00009</item>
+        <item>4600020291-07200-103EL-00015</item>
+        <item>4600020291-02200-108EL-00005</item>
+        <item>4600020291-02200-108EL-00009</item>
+        <item>4600020291-06500-205EL-00001</item>
+        <item>4600020291-02200-205EL-00005</item>
+        <item>4600020291-02200-LSTEL-00002</item>
+        <item>4600020291-02700-202AT-00014</item>
+        <item>4600020291-02700-202AT-00015</item>
+        <item>4600020291-06500-CUBEL-00001</item>
+        <item>4600020291-06500-103EL-00019</item>
+        <item>4600020291-06500-103EL-00018</item>
+        <item>4600020291-06500-103EL-00017</item>
+        <item>4600020291-06500-103EL-00016</item>
+        <item>4600020291-06500-103EL-00015</item>
+        <item>4600020291-06500-102EL-00002</item>
+        <item>4600020291-07200-100EL-00005</item>
+        <item>4600020291-07200-100EL-00006</item>
+        <item>4600020291-07200-100EL-00007</item>
+        <item>4600020291-07200-LSTEL-00002</item>
+        <item>4600020291-06500-102EL-00005</item>
+        <item>T17M200-70140-208AT-00001</item>
+        <item>T17M200-70140-208AT-00004</item>
+        <item>T17M200-70140-208AT-00005</item>
+        <item>T17M200-70140-208AT-00008</item>
+        <item>T17M200-70140-208AT-00009</item>
+        <item>T17M200-70140-208AT-00012</item>
+        <item>T17M200-70140-208AT-00013</item>
+        <item>T17M200-70140-208AT-00016</item>
+        <item>T17M200-70140-208AT-00017</item>
+        <item>T17M200-70140-208AT-00020</item>
+        <item>T17M401-06300-202EL-00001</item>
+        <item>T20M401-06300-202EL-00001</item>
+        <item>T17M200-70140-202AT-00001</item>
+        <item>T17M200-70140-227AT-00001</item>
+        <item>T17M200-70140-227AT-00005</item>
+        <item>T17M200-70140-227AT-00009</item>
+        <item>T17M200-70140-227AT-00013</item>
+        <item>T17M200-70140-227AT-00017</item>
+        <item>4600020291-07200-102EL-00002</item>
+        <item>4600020291-02700-100AT-00072</item>
+        <item>4600020291-07200-202EL-00002</item>
+        <item>4600020291-06500-202EL-00020</item>
+        <item>T20M401-02153-100ME-00001</item>
+        <item>4600020291-07200-LSTEL-00007</item>
+        <item>4600020291-06700-100CO-00003</item>
+        <item>4600020291-07200-108EL-00003</item>
+        <item>4600020291-07200-103EL-00006</item>
+        <item>4600020291-07200-108EL-00002</item>
+        <item>4600020291-07200-103EL-00005</item>
+        <item>4600020291-07200-102EL-00003</item>
+        <item>4600020291-07200-102EL-00004</item>
+        <item>4600020291-02700-400AT-00047</item>
+        <item>4600020291-07200-CUBEL-00008</item>
+        <item>T20M401-02200-103EL-00002</item>
+        <item>4600020291-06540-100AT-00001</item>
+    </string-array>
+    <string-array name="items_familia">
+        <item>CABLE MPT</item>
+        <item>FERRETERIA MPT</item>
+        <item>SOPORTE RIEL</item>
+        <item>SOPORTE CABLE TIERRA GENERAL</item>
+        <item>CONDUIT</item>
+        <item>CABLE TIERRA GENERAL</item>
+        <item>CABLE MENSAJERO</item>
+        <item>ANILLAS</item>
+        <item>SOPORTE MENSAJERO</item>
+        <item>SOPORTE ALUMBRADO</item>
+        <item>LUMINARIA</item>
+        <item>CABLE FUERZA</item>
+        <item>ENCHUFES MENORES</item>
+        <item>CINTA LED</item>
+        <item>TABLERO DE FUERZA</item>
+        <item>CONDUIT FLEXIBLE</item>
+        <item>SAFETY SWITCH</item>
+        <item>TABLEROS PLC</item>
+        <item>SOPORTE SAFETY SWITCH</item>
+        <item>SOPORTE TABLEROS</item>
+        <item>TABLERO DE ALUMBRADO</item>
+        <item>EQUIPOS TICA</item>
+        <item>SOPORTE EQUIPOS TICA</item>
+        <item>EPC</item>
+        <item>PIEZAS ESPECIALES EPC</item>
+        <item>SOPORTE ENCHUFE TRIFASICO</item>
+        <item>CABLE DE MT</item>
+        <item>CABLE DE BT</item>
+        <item>CABLE DE FIBRA OPTICA</item>
+        <item>CABLE DE FUERZA</item>
+        <item>TABLERO PLC</item>
+        <item>TABLERO DE COMUNICACIÓN</item>
+        <item>GABINETE COMUNICACIÓN</item>
+        <item>TABLERO DE FUERZA INS</item>
+        <item>TRANSFORMADOR</item>
+        <item>TABLERO SEÑAL INCENDIO</item>
+        <item>ENCHUFE TRIFASICO</item>
+        <item>CABLE TIERRA GENERAL MINA</item>
+        <item>ENCHUFE MENOR</item>
+        <item>SOPORTE LUMINARIA</item>
+        <item>SOPORTE CONDUIT</item>
+        <item>RIEL</item>
+        <item>TABLERO DE FUERZA Y CONTROL</item>
+        <item>TABLERO DE FUERZA</item>
+        <item>SOPORTE EPC</item>
+        <item>CABLE ALUMBRADO</item>
+        <item>CABLE FUERZA BT</item>
+        <item>CABLE BT</item>
+        <item>CABLE COMUNICACIÓN</item>
+        <item>CABLE DE CONTROL</item>
+        <item>CABLE DE TIERRA</item>
+        <item>CABLE DE SEÑAL</item>
+        <item>CAG 3/4</item>
+        <item>CAG 1</item>
+        <item>CABLE DE COMUNICACIÓN</item>
+    </string-array>
+    <string-array name="items_region">
+        <item>Norte Chico</item>
+        <item>Norte Grande</item>
+        <item>Zona Austral</item>
+        <item>Zona Central</item>
+        <item>Zona Sur</item>
+    </string-array>
+    <string-array name="items_fase">
+        <item>Inicial</item>
+        <item>Intermedia</item>
+        <item>Final</item>
+    </string-array>
+    <string-array name="items_epoca">
+        <item>Invierno</item>
+        <item>Otoño</item>
+        <item>Primavera</item>
+        <item>Verano</item>
+    </string-array>
+    <string-array name="items_duracion">
+        <item>0-3 meses</item>
+        <item>3-6 meses</item>
+        <item>6-12 meses</item>
+        <item>12-18 meses</item>
+        <item>18-24 meses</item>
+        <item>Mas de 24 meses</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - SAP & SRA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f3f4f6;
+        }
+
+        .login-container {
+            display: flex;
+            height: 100vh;
+        }
+
+        .left-section {
+            background-color: #2d5bd8;
+            color: white;
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .sap-image {
+            position: relative;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .sap-image img {
+            width: 80%;
+            border-radius: 10px;
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 30px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .menu-items ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .menu-items li {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        .menu-items li img {
+            width: 20px;
+            margin-right: 10px;
+        }
+
+        .right-section {
+            width: 60%;
+            padding: 13%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #2d5bd8;
+        }
+
+        h3 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .login-form label {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .login-form input {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .login-form button {
+            background-color: #2d5bd8;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .options {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .options a {
+            color: #2d5bd8;
+            text-decoration: none;
+        }
+
+        .signup {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .signup a {
+            color: #2d5bd8;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <!-- Columna Izquierda -->
+        <div class="left-section">
+            <div class="sap-image">
+                <!-- Espacio para agregar imagen principal (SAP) -->
+                <img src="./img/sap.png" alt="SAP">
+            </div>
+        </div>
+
+        <!-- Columna Derecha -->
+        <div class="right-section">
+            <h2>Bienvenido!</h2>
+            <h3>Gestión Integral de Estados y Sincronización: SAP & SRA</h3>
+            <form class="login-form" onsubmit="return false;">
+                <label for="username">Username:</label>
+                <input type="text" id="username" placeholder="Username">
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" placeholder="Password">
+                
+                <button type="submit" >Login</button>
+                
+                <div class="options">
+                    <label><input type="checkbox" id="remember"> Remember</label>
+                    <a href="#">Forget Password?</a>
+                </div>
+            </form>
+            <div class="signup">
+                No Account? Go to <a href="#">Sign up</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.login-form').addEventListener('submit', function() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            // Validación básica (ejemplo)
+            if (username === '' || password === '') {
+                alert('Por favor, completa todos los campos.');
+            } else {
+                localStorage.clear();
+                localStorage.setItem("username", username);
+                console.log('localStorage.getItem::',localStorage.getItem('username'));
+                location.href="monitor-sync.html"
+            }
+
+            
+        });
+    </script>
+</body>
+</html>

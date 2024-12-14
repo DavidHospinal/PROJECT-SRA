@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/logo_smart_req"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/logo_smart_req"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SmarReqAssist"
+        tools:targetApi="31">
+        <activity
+            android:name=".DetalleSIMSeleccionadaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GestionarAprobacionSIMActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GenerarSimActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GenerarEnviarPreSimActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MantenerPreSIMActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PreSimGeneradaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ResultadoPrediccionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GenerarPreSIM"
+            android:exported="false" />
+        <activity
+            android:name=".Menu"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

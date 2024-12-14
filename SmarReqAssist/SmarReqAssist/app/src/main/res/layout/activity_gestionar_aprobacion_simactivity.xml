@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".GestionarAprobacionSIMActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            >
+            <TextView
+                android:id="@+id/txtSolpedNro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SmartReq Assist -  Módulo Gestionar"
+                android:textColor="#2E2ABA"
+                android:layout_marginTop="10dp"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/txtSolpedNro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="AprobacionSIM"
+                android:layout_marginTop="10dp"
+                android:textColor="#2E2ABA"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="107dp"
+                android:layout_marginTop="10dp"
+                android:layout_height="88dp"
+                app:srcCompat="@drawable/logo_smart_req" />
+
+
+            <TextView
+                android:id="@+id/txtSolpedNro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lista de SIM Generales:"
+                android:layout_marginTop="10dp"
+                android:textColor="#2E2ABA"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:stretchColumns="1"
+                android:layout_marginTop="10dp">
+
+                <TableRow android:background="#D3D3D3">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:padding="0dp"
+                        android:text=""
+                        android:textSize="1dp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="4dp"
+                        android:text="SIM"
+                        android:textSize="12dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="4dp"
+                        android:text="Proyecto"
+                        android:textSize="12dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="4dp"
+                        android:text="Estado"
+                        android:textSize="12dp"
+                        android:textStyle="bold" />
+                </TableRow>
+
+                <TableRow>
+                    <CheckBox
+                        android:id="@+id/myCheckBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#4CAF50"
+                        android:checked="false"
+                        android:padding="8dp"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="4dp"
+                        android:text="S045" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="4dp"
+                        android:text="Construcción Puente Maule" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="4dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="4dp"
+                            android:text="Generada" />
+
+                        <Button
+                            android:layout_width="65dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:background="@drawable/button_background_delete"
+                            android:backgroundTint="#E91E1E"
+                            android:gravity="center"
+                            android:textSize="10dp"
+                            app:icon="@drawable/baseline_remove_red_eye_24" />
+                    </LinearLayout>
+                </TableRow>
+                <TableRow>
+                    <CheckBox
+                        android:id="@+id/myCheckBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#4CAF50"
+                        android:checked="false"
+                        android:padding="8dp"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="4dp"
+                        android:text="S046" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="4dp"
+                        android:text="Rehabilitación Calle Sur" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="4dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="4dp"
+                            android:text="Aprobada" />
+
+                        <Button
+                            android:layout_width="65dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:background="@drawable/button_background_delete"
+                            android:backgroundTint="#E91E1E"
+                            android:gravity="center"
+                            android:textSize="10dp"
+                            app:icon="@drawable/baseline_remove_red_eye_24" />
+                    </LinearLayout>
+                </TableRow>
+                <TableRow>
+                    <CheckBox
+                        android:id="@+id/myCheckBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#4CAF50"
+                        android:checked="false"
+                        android:padding="8dp"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="4dp"
+                        android:text="S047" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="4dp"
+                        android:text="Edificio Melipilla" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="4dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="4dp"
+                            android:text="Aprobada" />
+
+                        <Button
+                            android:layout_width="65dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:background="@drawable/button_background_delete"
+                            android:backgroundTint="#E91E1E"
+                            android:gravity="center"
+                            android:textSize="10dp"
+                            app:icon="@drawable/baseline_remove_red_eye_24" />
+                    </LinearLayout>
+                </TableRow>
+                <TableRow>
+                    <CheckBox
+                        android:id="@+id/myCheckBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#4CAF50"
+                        android:checked="false"
+                        android:padding="8dp"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="4dp"
+                        android:text="S048" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="4dp"
+                        android:text="Aeropuerto Benito Merino" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="4dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="4dp"
+                            android:text="Pendiente" />
+
+                        <Button
+                            android:layout_width="65dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:background="@drawable/button_background_delete"
+                            android:backgroundTint="#E91E1E"
+                            android:gravity="center"
+                            android:textSize="10dp"
+                            app:icon="@drawable/baseline_remove_red_eye_24" />
+                    </LinearLayout>
+                </TableRow>
+                <TableRow>
+                    <CheckBox
+                        android:id="@+id/myCheckBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#4CAF50"
+                        android:checked="false"
+                        android:padding="8dp"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="4dp"
+                        android:text="S049" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="4dp"
+                        android:text="Planta Minera Norte" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="4dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="4dp"
+                            android:text="Pendiente" />
+
+                        <Button
+                            android:layout_width="65dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:background="@drawable/button_background_delete"
+                            android:backgroundTint="#E91E1E"
+                            android:gravity="center"
+                            android:textSize="10dp"
+                            app:icon="@drawable/baseline_remove_red_eye_24" />
+                    </LinearLayout>
+                </TableRow>
+                <TableRow>
+                    <CheckBox
+                        android:id="@+id/myCheckBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#4CAF50"
+                        android:checked="false"
+                        android:padding="8dp"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="4dp"
+                        android:text="S050" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="4dp"
+                        android:text="Carretera Sur Magallanes" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="4dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="4dp"
+                            android:text="Pendiente" />
+
+                        <Button
+                            android:layout_width="65dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:background="@drawable/button_background_delete"
+                            android:backgroundTint="#E91E1E"
+                            android:gravity="center"
+                            android:textSize="10dp"
+                            app:icon="@drawable/baseline_remove_red_eye_24" />
+                    </LinearLayout>
+                </TableRow>
+            </TableLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnVerDetalleSim"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/button_background_delete"
+                    android:backgroundTint="#FFFFFF"
+                    android:gravity="center"
+                    android:text="Ver Detalle SIM"
+                    android:textSize="10dp" />
+                <Button
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/button_background_delete"
+                    android:backgroundTint="#E91E1E"
+                    android:gravity="center"
+                    android:text="Generar PDF"
+                    android:textSize="10dp"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

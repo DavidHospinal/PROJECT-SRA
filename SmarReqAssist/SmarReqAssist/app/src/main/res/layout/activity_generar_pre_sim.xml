@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF"
+    tools:context=".GenerarPreSIM">
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Generar Pre Sim Predictiva"
+        android:textColor="#2E2ABA"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.042" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="328dp"
+        android:layout_height="618dp"
+        android:layout_gravity="center_horizontal"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintVertical_bias="0.38">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtProyecto"
+                    android:layout_width="92dp"
+                    android:layout_height="wrap_content"
+                    android:text="Proyecto:"
+                    android:textColor="#000"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/editProyecto"
+                    android:layout_width="204dp"
+                    android:layout_height="32dp"
+                    android:background="@drawable/rounded_edit_text_background"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:textColor="#000"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtFecha"
+                    android:layout_width="92dp"
+                    android:layout_height="wrap_content"
+                    android:text="Fecha:"
+                    android:textColor="#000"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/editFecha"
+                    android:layout_width="210dp"
+                    android:layout_height="32dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_edit_text_background"
+                    android:ems="10"
+                    android:textSize="14sp"
+                    android:focusable="false"
+                android:clickable="true" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtSeleccionarVariablesProyecto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Seleccionar Variables del Proyecto"
+                    android:textColor="#2E2ABA"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtActividad"
+                    android:layout_width="92dp"
+                    android:layout_height="wrap_content"
+                    android:text="Actividad:"
+                    android:textColor="#000"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/spnActividad"
+                    android:layout_width="200dp"
+                    android:layout_height="32dp"
+                    android:background="@drawable/spinner_background" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtEspecialidad"
+                    android:layout_width="92dp"
+                    android:layout_height="wrap_content"
+                    android:text="Especialidad:"
+                    android:textColor="#000"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/spnEspecialidad"
+                    android:layout_width="200dp"
+                    android:layout_height="32dp"
+                    android:background="@drawable/spinner_background" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtNivel"
+                    android:layout_width="92dp"
+                    android:layout_height="wrap_content"
+                    android:text="Nivel:"
+                    android:textColor="#000"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/spnNivel"
+                    android:layout_width="200dp"
+                    android:layout_height="32dp"
+                    android:background="@drawable/spinner_background" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtArea"
+                    android:layout_width="92dp"
+                    android:layout_height="wrap_content"
+                    android:text="Área:"
+                    android:textColor="#000"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/spnArea"
+                    android:layout_width="200dp"
+                    android:layout_height="32dp"
+                    android:background="@drawable/spinner_background" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtPlano"
+                    android:layout_width="92dp"
+                    android:layout_height="wrap_content"
+                    android:text="Plano:"
+                    android:textColor="#000"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/spnPlano"
+                    android:layout_width="200dp"
+                    android:layout_height="32dp"
+                    android:background="@drawable/spinner_background" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtFamilia"
+                    android:layout_width="92dp"
+                    android:layout_height="wrap_content"
+                    android:text="Familia:"
+                    android:textColor="#000"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/spnFamilia"
+                    android:layout_width="200dp"
+                    android:layout_height="32dp"
+                    android:background="@drawable/spinner_background" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtRegion"
+                    android:layout_width="92dp"
+                    android:layout_height="wrap_content"
+                    android:text="Región:"
+                    android:textColor="#000"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/spnRegion"
+                    android:layout_width="200dp"
+                    android:layout_height="32dp"
+                    android:background="@drawable/spinner_background" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtFase"
+                    android:layout_width="92dp"
+                    android:layout_height="wrap_content"
+                    android:text="Fase:"
+                    android:textColor="#000"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/spnFase"
+                    android:layout_width="200dp"
+                    android:layout_height="32dp"
+                    android:background="@drawable/spinner_background" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtEpoca"
+                    android:layout_width="92dp"
+                    android:layout_height="wrap_content"
+                    android:text="Época:"
+                    android:textColor="#000"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/spnEpoca"
+                    android:layout_width="200dp"
+                    android:layout_height="32dp"
+                    android:background="@drawable/spinner_background" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtDuracion"
+                    android:layout_width="92dp"
+                    android:layout_height="wrap_content"
+                    android:text="Duración:"
+                    android:textColor="#000"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/spnDuracion"
+                    android:layout_width="200dp"
+                    android:layout_height="32dp"
+                    android:background="@drawable/spinner_background" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtGlosa"
+                    android:layout_width="92dp"
+                    android:layout_height="wrap_content"
+                    android:text="Glosa:"
+                    android:textColor="#000"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/editGlosa"
+                    android:layout_width="200dp"
+                    android:layout_height="32dp"
+                    android:background="@drawable/rounded_edit_text_background"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:maxLines="10"
+                    android:minLines="5"
+                    android:textColor="#000"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnIngresar"
+                    android:layout_width="150dp"
+                    android:layout_height="44dp"
+                    android:background="@drawable/button_background"
+                    android:gravity="center"
+                    android:text="Generar"
+                    android:textColor="#FFF"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

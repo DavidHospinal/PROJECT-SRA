@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - SmartReq Assist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f2f2f2;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            width: 100%;
+            padding: 20px 0;
+            background-color: white;
+            text-align: left;
+            padding-left: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            color: #ff5722;
+            font-size: 20px;
+        }
+
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 100px);
+            width: 100%;
+            padding: 20px;
+        }
+
+        .login-box {
+            background-color: white;
+            padding: 40px 10px;
+            width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .login-box h2 {
+            color: #ff5722;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .forgot-password {
+            display: block;
+            text-align: right;
+            color: #ff5722;
+            font-size: 12px;
+            margin-bottom: 20px;
+            text-decoration: none;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        .login-button {
+            width: 100%;
+            padding: 10px;
+            background-color: #ff5722;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .login-button:hover {
+            background-color: #e64a19;
+        }
+    </style>
+</head>
+<body> 
+    <header>
+        <h1>Reporte y Seguimiento SmartReq Assist</h1>
+    </header>   
+    <div class="login-container">
+        <div class="login-box">
+            <h2>Bienvenido a Reporte y Seguimiento<br>SmartReq Assist</h2>
+            <form action="#">
+                <div class="input-group">
+                    <input id="username" type="text" placeholder="Please enter user name" required>
+                </div>
+                <div class="input-group">
+                    <input  id="password" type="password" placeholder="Please enter user password" required>
+                </div>
+                <a href="#" class="forgot-password">Forget password</a>
+                <button type="button" onclick="login()" class="login-button">Login</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+<script>
+    const login = () => {
+
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        if (username === '' || password === '') {
+            alert('Por favor, completa todos los campos.');
+        } else {
+        sessionStorage.clear();
+        sessionStorage.setItem("username", username);
+        location.href ="reporte-operativo.html";
+        }
+    }
+
+</script>
+</html>
